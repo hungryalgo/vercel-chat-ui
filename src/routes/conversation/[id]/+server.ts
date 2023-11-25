@@ -195,6 +195,7 @@ export async function POST({ request, locals, params, getClientAddress }) {
 					updates.push(newUpdate);
 				}
 				controller.enqueue(JSON.stringify(newUpdate) + "\n");
+				
 			}
 
 			update({ type: "status", status: "started" });
