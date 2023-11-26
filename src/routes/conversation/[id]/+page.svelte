@@ -143,7 +143,8 @@
 			// this is a bit ugly
 			// we read the stream until we get the final answer
 			while (finalAnswer === "") {
-				await new Promise((r) => setTimeout(r, 25));
+				// await new Promise((r) => setTimeout(r, 25));
+				console.error("😤😤😤😤😤 inside empty finalAnswer");
 
 				// check for abort
 				if (isAborted) {
