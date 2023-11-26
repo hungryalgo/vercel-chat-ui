@@ -4,9 +4,9 @@ import { error } from "@sveltejs/kit";
 import { authCondition } from "$lib/server/auth";
 import { UrlDependency } from "$lib/types/UrlDependency";
 
-export const config = {
-	runtime: 'edge',
-};
+// export const config = {
+// 	runtime: 'edge',
+// };
 
 export const load = async ({ params, depends, locals }) => {
 	let conversation;
