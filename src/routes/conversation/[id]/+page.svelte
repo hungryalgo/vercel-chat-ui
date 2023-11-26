@@ -175,6 +175,7 @@
 								loading = false;
 								pending = false;
 								invalidate(UrlDependency.Conversation);
+								console.error("🥹🥹🥹🥹🥹 got finalAnswer");
 							} else if (update.type === "stream") {
 								pending = false;
 
@@ -185,10 +186,14 @@
 										...messages,
 										{ from: "assistant", id: randomUUID(), content: update.token },
 									];
+									console.error("🙃🙃🙃🙃🙃 lastMessage not Assistant");
+
 								} else {
 									lastMessage.content += update.token;
 									messages = [...messages];
+									console.error("😊😊😊😊😊 lastMessage isAssistant");
 								}
+								console.error("😇😇😇😇😇 lastMessage");
 							} else if (update.type === "webSearch") {
 								webSearchMessages = [...webSearchMessages, update];
 							} else if (update.type === "status") {
