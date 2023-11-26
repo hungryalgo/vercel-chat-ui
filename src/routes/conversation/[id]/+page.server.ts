@@ -5,9 +5,8 @@ import { authCondition } from "$lib/server/auth";
 import { UrlDependency } from "$lib/types/UrlDependency";
 
 export const config = {
-	// Use 'nodejs18.x' for Serverless
 	runtime: 'edge',
-  };
+};
 
 export const load = async ({ params, depends, locals }) => {
 	let conversation;
