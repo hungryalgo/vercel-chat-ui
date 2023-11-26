@@ -289,6 +289,8 @@ export async function POST({ request, locals, params, getClientAddress }) {
 								updatedAt: new Date(),
 							},
 						];
+						console.error("🤪🤪🤪🤪🤪 output.generated_text: " + output.generated_text);
+						
 					}
 				}
 			} catch (e) {
