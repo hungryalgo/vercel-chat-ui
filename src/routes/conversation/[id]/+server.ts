@@ -15,10 +15,6 @@ import { summarize } from "$lib/server/summarize";
 import { uploadFile } from "$lib/server/files/uploadFile.js";
 import sizeof from "image-size";
 
-export const config = {
-	runtime: "edge",
-};
-
 export async function POST({ request, locals, params, getClientAddress }) {
 	const id = z.string().parse(params.id);
 	const convId = new ObjectId(id);
