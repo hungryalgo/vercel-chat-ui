@@ -137,7 +137,7 @@
 
 			// eslint-disable-next-line no-undef
 			const encoder = new TextDecoderStream();
-			const reader = response?.body?.pipeThrough(encoder).getReader();
+			const reader = response?.body?.myStream?.pipeThrough(encoder).getReader();
 			let finalAnswer = "";
 
 			// this is a bit ugly

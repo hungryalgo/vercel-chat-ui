@@ -15,6 +15,10 @@ import { summarize } from "$lib/server/summarize";
 import { uploadFile } from "$lib/server/files/uploadFile.js";
 import sizeof from "image-size";
 
+export const config = {
+	runtime: 'edge',
+};
+
 export async function POST({ request, locals, params, getClientAddress }) {
 	const id = z.string().parse(params.id);
 	const convId = new ObjectId(id);
@@ -333,7 +337,7 @@ export async function POST({ request, locals, params, getClientAddress }) {
 	});
 
 	// Todo: maybe we should wait for the message to be saved before ending the response - in case of errors
-	return new Response(stream);
+	return new Response({myStream:{stream}});
 }
 
 export async function DELETE({ locals, params }) {
