@@ -137,7 +137,7 @@
 
 			// eslint-disable-next-line no-undef
 			const encoder = new TextDecoderStream();
-			const reader = response?.body?.myStream?.pipeThrough(encoder).getReader();
+			const reader = response?.body?.pipeThrough(encoder).getReader();
 			let finalAnswer = "";
 
 			// this is a bit ugly
@@ -166,6 +166,8 @@
 
 					// if it's not done we parse the value, which contains all messages
 					const inputs = value.split("\n");
+					console.error("😍😍😍😍😍 inputs" + inputs);
+
 					inputs.forEach(async (el: string) => {
 						try {
 							const update = JSON.parse(el) as MessageUpdate;

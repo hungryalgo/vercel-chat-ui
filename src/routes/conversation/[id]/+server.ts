@@ -337,7 +337,7 @@ export async function POST({ request, locals, params, getClientAddress }) {
 	});
 
 	// Todo: maybe we should wait for the message to be saved before ending the response - in case of errors
-	return new Response({myStream:{stream}});
+	return new Response(stream);
 }
 
 export async function DELETE({ locals, params }) {
