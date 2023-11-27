@@ -14,7 +14,7 @@ const config = {
 	preprocess: vitePreprocess(),
 
 	kit: {
-		adapter: adapter({ runtime: 'edge' }),
+		adapter: adapter(),
 
 		paths: {
 			base: process.env.APP_BASE || "",
