@@ -144,7 +144,7 @@
 			// we read the stream until we get the final answer
 			while (finalAnswer === "") {
 				// await new Promise((r) => setTimeout(r, 25));
-				console.error("😤😤😤😤😤 inside empty finalAnswer");
+				// console.error("😤😤😤😤😤 inside empty finalAnswer");
 
 				// check for abort
 				if (isAborted) {
@@ -166,7 +166,7 @@
 
 					// if it's not done we parse the value, which contains all messages
 					const inputs = value.split("\n");
-					console.error("😍😍😍😍😍 inputs" + inputs);
+					// console.error("😍😍😍😍😍 inputs" + inputs);
 
 					inputs.forEach(async (el: string) => {
 						try {
@@ -177,7 +177,7 @@
 								loading = false;
 								pending = false;
 								invalidate(UrlDependency.Conversation);
-								console.error("🥹🥹🥹🥹🥹 got finalAnswer");
+								// console.error("🥹🥹🥹🥹🥹 got finalAnswer");
 							} else if (update.type === "stream") {
 								pending = false;
 
@@ -188,14 +188,14 @@
 										...messages,
 										{ from: "assistant", id: randomUUID(), content: update.token },
 									];
-									console.error("🙃🙃🙃🙃🙃 lastMessage not Assistant");
+									// console.error("🙃🙃🙃🙃🙃 lastMessage not Assistant");
 
 								} else {
 									lastMessage.content += update.token;
 									messages = [...messages];
-									console.error("😊😊😊😊😊 lastMessage isAssistant");
+									// console.error("😊😊😊😊😊 lastMessage isAssistant");
 								}
-								console.error("😇😇😇😇😇 lastMessage");
+								// console.error("😇😇😇😇😇 lastMessage");
 							} else if (update.type === "webSearch") {
 								webSearchMessages = [...webSearchMessages, update];
 							} else if (update.type === "status") {
